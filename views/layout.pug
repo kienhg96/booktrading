@@ -1,7 +1,60 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src="/third-party/jquery.min.js")
+		script(src="/third-party/bootstrap/js/bootstrap.min.js")
+		link(rel='stylesheet', href='/third-party/bootstrap/css/bootstrap.min.css')
+		script(src="/javascripts/auth.js")
+		link(rel='stylesheet', href='/third-party/font-awesome/css/font-awesome.min.css')
+	body
+		nav.navbar.navbar-default
+			div.containter-fluid
+				div.navbar-header
+					button.navbar-toggle(type="button", data-toggle="collapse", data-target="#myNavbar")
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href="/") Booktrading Club
+				div.collapse.navbar-collapse#myNavbar
+					ul.nav.navbar-nav.navbar-right#rightPanel
+						if user
+							li
+								a#mybook(href="/mybooks") My Books
+							li
+								a#mybook(href="/incoming") Incoming Trades
+							li
+								a#mybook(href="/outcoming") Outcoming Trades
+							li.dropdown
+								a.dropdown-toggle(href="#") Hello, #{user.username} 
+									span.caret
+								ul.dropdown-menu
+									li
+										div.form
+											button.btn.btn-primary.form-control#btnLogout Logout
+						else
+							li.dropdown
+								a.dropdown-toggle(href="#")
+									span.glyphicon.glyphicon-user
+									|  Signup 
+									span.caret
+								ul.dropdown-menu
+									li
+										div.form#signupForm
+											input.form-control.username(placeholder="Username")
+											input.form-control.password(placeholder="Password", type="password")
+											input.form-control.has-error#repPassword(placeholder="Repeat password", type="password")
+											button.btn.btn-primary.form-control#btnSignup Sign up
+							li.dropdown
+								a.dropdown-toggle(href="#")
+									span.glyphicon.glyphicon-log-in
+									|  Login 
+									span.caret
+								ul.dropdown-menu
+									li
+										div.form#loginForm
+											input.form-control.username(placeholder="Username")
+											input.form-control.password(placeholder="Password", type="password")
+											button.btn.btn-primary.form-control#btnLogin Login
+		block content

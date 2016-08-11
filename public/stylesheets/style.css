@@ -1,8 +1,51 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.form {
+	width: 250px;
+	padding: 10px 10px 10px 10px;
+}
+.form-control {
+	margin-bottom: 5px;
 }
 
-a {
-  color: #00B7FF;
+.container {
+}
+
+.elem {
+	position: relative;
+	display: inline-block;
+	margin: 10px 10px 10px 10px;
+}
+img {
+	width: 100%;
+}
+
+.elem a {
+	position: absolute;
+	left: 10px;
+	top: 1px;
+}
+.del {
+	color: red;
+}
+#search {
+	margin-left: 10px;
+}
+.around {
+	width: 100%;
+	padding: 10px 10px 10px 10px;
+	background-color: rgb(230, 230, 230);
+	border-radius: 5px;
+	overflow: hidden;
+	align-items: center;
+	margin-bottom: 5px;
+}
+.label {
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	color: black !important;
+	float: left;
+	font-size: 20px !important;
+}
+.around .btn {
+	float: right;
+	margin-left: 5px;
 }

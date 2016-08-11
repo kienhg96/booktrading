@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	div.container
+		div#mybooks
+		hr
+		div#findbooks.form-inline
+			input.form-control#bookname(placeholder="Input book name here")
+			button.btn.btn-primary#search Search
+		div#searchItem
+	script(src='/javascripts/mybooks.js')
