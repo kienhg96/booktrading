@@ -47,6 +47,7 @@ $(document).ready(function(){
 			$.get('/api/search?q=' + name, function(result){
 				console.log(result);
 				searchItems = result.items;
+				$('#searchItem').html('');
 				for (var i = 0; i < searchItems.length; i++){
 					var str = 
 					'<div class="elem">' +
