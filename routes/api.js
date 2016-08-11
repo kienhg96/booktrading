@@ -51,7 +51,10 @@ router.post('/addbook', function(req, res){
 			}
 			var result = JSON.parse(body);
 			if (result.totalItems === 0){
-				res.json({errCode: -4, msg: 'Book not fount'});
+				res.json({errCode: -4, msg: 'Book not found'});
+			}
+			if (!result.items) {
+				res.json({errCode: -9, result: result, msg: 'Error network, please see console'});
 			}
 			var book = new Book();
 			var item = result.items[0];

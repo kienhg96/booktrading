@@ -67,6 +67,7 @@ $(document).ready(function(){
 		}, function(result){
 			if (result.errCode !== 0) {
 				alert(result.msg);
+				console.log(result.result);
 			}
 			else {
 				var str = 
